@@ -27,14 +27,14 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
 	if (depth && is_left)
 	{
 		for (i = 0; i < width + right; i++)
-			s[depth - 1][offset + left + width / 2 + i] = "-';
+			s[depth - 1][offset + left + width / 2 + i] = '-';
 		s[depth - 1][offset + left + width / 2] = '.';
 	}
 	else if (depth && !is_left)
 	{
 		for (i = 0; i < left + width; i++)
 			s[depth - 1][offset - width / 2 + i] = '-';
-		s[depth - 1][offset + left + width / 2] = '.':
+		s[depth - 1][offset + left + width / 2] = '.';
 	}
 	return (left + width + right);
 }
@@ -45,7 +45,7 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
 * Return: The height of the tree starting at @node
 */
 
-static size_t_height(const binary_tree_t *tree)
+static size_t _height(const binary_tree_t *tree)
 {
 	size_t height_1;
 	size_t height_r;
@@ -81,7 +81,7 @@ void binary_tree_print(const binary_tree_t *tree)
 		{
 			if (s[i][j] != ' ')
 				break;
-			s[i][j] = "\0';
+			s[i][j] = '\0';
 		}
 		printf("%s\n", s[i]);
 		free(s[i]);
